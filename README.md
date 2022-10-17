@@ -1,19 +1,20 @@
 # go-git service
-<img src="./images/golang.png" width="200"/>
+<img src="./images/golang.png" width="300"/>
 ----|----|
 
 ## Purpose
 This service aims to achieve to pull the all git Pull requests of last week and provides summary data of it.
-Config.json contains
+**config.json contains**
 - Email address of sender and reciever. 
 - PreviousDays, we can update to any desired number of days to get data from github repository. For example currently previous days is set to 7 (a week). Hence it considers pull request data upto 1 week.
 - The URL of the repository.
 
 ## Table Contents
--[Development Environment](##Development Environment)
--[Dev Using Docker](##Dev Using Docker)
--[Running Tests](##Running Tests)
--[Debugging](##Debug-(Visual-Studio-Code))
+
+- [Development Environment](##Development Environment)
+- [Dev Using Docker](##Dev Using Docker)
+- [Running Tests](##Running Tests)
+- [Debugging](##Debug-(Visual-Studio-Code))
 
 
 ## Development Environment
@@ -59,3 +60,5 @@ Config.json contains
 * Create image: `docker build . -t go-git`
 * Run image: `docker run -p 3000:3000 go-git`
 
+## Running tests
+- To test particuler package with coverage use **go test -coverprofile cover.out** then use **go tool cover -html=cover.out**
