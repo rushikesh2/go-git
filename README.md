@@ -21,7 +21,7 @@ This service aims to achieve to pull the all git Pull requests of last week and 
 ### Prerequisites
 - Install Git
 - Install **GoLang version >= 1.15**
-- GoLang version above is mandatory version since this Microservice uses [**Go Modules**](https://blog.golang.org/using-go-modules) as dependency management tool
+- GoLang version above is mandatory version since this uses [**Go Modules**](https://blog.golang.org/using-go-modules) as dependency management tool
 - Install your favorite IDE ( Visual Code Studio here ) for GoLang
 - Clone this git repo into your workspace
 - Import this repo into IDE

@@ -26,6 +26,7 @@ func Worker() (err error) {
 		log.Println(err.Error())
 		return
 	}
+	log.Printf("Configuration has been read from JSON (%s) successfully.\n", filePath)
 
 	gitHandler := gitreport.GitWorker(configuration)
 	summary, err := gitHandler.FetchGitPRSummary()

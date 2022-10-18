@@ -2,5 +2,6 @@
 	"SenderEmail": "sender@gmail.com",
 	"ReceiverEmail": "scrummaster@gmail.com",
 	"PreviousDays": 7,
-	"GitURL": "https://api.github.com/repos/aws/aws-sdk-go"
+	"BaseURL": "https://api.github.com/repos/%s/pulls?state=all&&sort=updated&&direction=desc&&page=%s",
+	"Repository": "golang/go"
 }

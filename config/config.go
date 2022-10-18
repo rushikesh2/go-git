@@ -2,7 +2,6 @@ package config
 
 import (
 	"encoding/json"
-	"log"
 	"os"
 )
 
@@ -10,8 +9,9 @@ import (
 type Configuration struct {
 	SenderEmail   string `json:"senderEmail"`
 	ReceiverEmail string `json:"receiverEmail"`
-	GitURL        string `json:"giturl"`
+	BaseURL       string `json:"baseUrl"`
 	PreviousDays  int    `json:"previousDays"`
+	Repository    string `json:"repository"`
 }
 
 // ReadConfigValues read config data from JSON-file
@@ -19,14 +19,12 @@ func ReadConfigValues(filePath string) (config Configuration, err error) {
 	var file *os.File
 	file, err = os.Open(filePath)
 	if err != nil {
-		log.Println(err.Error())
 		return
 	}
 	err = json.NewDecoder(file).Decode(&config)
 	if err != nil {
-		log.Println(err.Error())
 		return
 	}
-	log.Printf("Configuration has been read from JSON (%s) successfully.\n", filePath)
+	file.Close()
 	return
 }

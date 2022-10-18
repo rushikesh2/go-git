@@ -17,7 +17,7 @@ func (suite *FetchPRDetailsSuite) TestFetchGitPRSummary() {
 			SenderEmail:   "sender@gmail.com",
 			ReceiverEmail: "receiver@gmail.com",
 			PreviousDays:  3,
-			GitURL:        "https://api.github.com/repos/aws/aws-sdk-go",
+			BaseURL:       "https://api.github.com/repos/aws/aws-sdk-go",
 		},
 	}
 	_, err := gw.FetchGitPRSummary()
@@ -30,7 +30,7 @@ func (suite *FetchPRDetailsSuite) TestFetchGitPRSummary_Error() {
 			SenderEmail:   "sender@gmail.com",
 			ReceiverEmail: "receiver@gmail.com",
 			PreviousDays:  3,
-			GitURL:        "https://api.github.com",
+			BaseURL:       "https://api.github.com",
 		},
 	}
 	_, err := gw.FetchGitPRSummary()
@@ -43,7 +43,7 @@ func (suite *FetchPRDetailsSuite) TestFetchGitPRSummary_ErrorMakeRequest() {
 			SenderEmail:   "sender@gmail.com",
 			ReceiverEmail: "receiver@gmail.com",
 			PreviousDays:  3,
-			GitURL:        "",
+			BaseURL:       "",
 		},
 	}
 	_, err := gw.FetchGitPRSummary()
@@ -59,7 +59,7 @@ func (suite *FetchPRDetailsSuite) TestSendMail() {
 			SenderEmail:   "sender@gmail.com",
 			ReceiverEmail: "receiver@gmail.com",
 			PreviousDays:  3,
-			GitURL:        "https://api.github.com/repos/aws/aws_gogit",
+			BaseURL:       "https://api.github.com/repos/aws/aws_gogit",
 		},
 	}
 	err := gw.SendMail(summary)
@@ -71,7 +71,7 @@ func (suite *FetchPRDetailsSuite) TestGitWorker() {
 		SenderEmail:   "sender@gmail.com",
 		ReceiverEmail: "receiver@gmail.com",
 		PreviousDays:  3,
-		GitURL:        "https://api.github.com/repos/aws/aws_gogit",
+		BaseURL:       "https://api.github.com/repos/aws/aws_gogit",
 	}
 
 	_ = GitWorker(config)
