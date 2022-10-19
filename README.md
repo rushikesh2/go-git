@@ -1,6 +1,5 @@
 # go-git service
 <img src="./images/golang.png" width="300"/>
-----|----|
 
 ## Purpose
 This service aims to achieve to pull the all git Pull requests of last week and provides summary data of it.

@@ -76,6 +76,8 @@ func (gw *gitWorker) SendMail(summaryData map[string]int) (err error) {
 	fmt.Print("\n")
 	fmt.Println("Please find the summary report of github PRs below.")
 	fmt.Print("\n")
+
+	// used tabwriter library for more details: https://pkg.go.dev/text/tabwriter
 	w := tabwriter.NewWriter(os.Stdout, 5, 1, 0, ' ', tabwriter.Debug)
 	fmt.Fprintf(w, "%s\t%s\t\n", "---------------", "-----------")
 	fmt.Fprintf(w, "%s\t%s\t\n", "State of the PR", "Count")
