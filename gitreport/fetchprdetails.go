@@ -74,7 +74,7 @@ func (gw *gitWorker) SendMail(summaryData map[string]int) (err error) {
 	fmt.Print("\n")
 	fmt.Println("Hello Scrum-Master,")
 	fmt.Print("\n")
-	fmt.Println("Please find the summary report of github PRs below.")
+	fmt.Println("Please find the summary report of github repository below.")
 	fmt.Print("\n")
 
 	// used tabwriter library for more details: https://pkg.go.dev/text/tabwriter
