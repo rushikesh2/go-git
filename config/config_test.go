@@ -15,7 +15,8 @@ func (suite *ConfigTestSuite) TestReadConfigValues_Success() {
 		SenderEmail:   "senr@gmail.com",
 		ReceiverEmail: "mmaster@gmail.com",
 		PreviousDays:  2,
-		BaseURL:       "https://apis.gitl.com/repos/aws",
+		BaseURL:       "https://apis.gitl.com/repos/",
+		Repository:    "abc/abc",
 	}
 	conf, err := ReadConfigValues("test.json")
 	suite.NoError(err)

@@ -17,7 +17,8 @@ func (suite *FetchPRDetailsSuite) TestFetchGitPRSummary() {
 			SenderEmail:   "sender@gmail.com",
 			ReceiverEmail: "receiver@gmail.com",
 			PreviousDays:  3,
-			BaseURL:       "https://api.github.com/repos/aws/aws-sdk-go",
+			BaseURL:       "https://api.github.com/repos/%s/pulls?state=all&&sort=updated&&direction=desc&&page=%s",
+			Repository:    "aws/aws-sdk-go",
 		},
 	}
 	_, err := gw.FetchGitPRSummary()
