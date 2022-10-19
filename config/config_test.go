@@ -26,7 +26,6 @@ func (suite *ConfigTestSuite) TestReadConfigValues_Success() {
 func (suite *ConfigTestSuite) TestReadConfigValues_Error() {
 	_, err := ReadConfigValues("")
 	suite.Error(err)
-	suite.Equal("open : The system cannot find the file specified.", err.Error())
 }
 
 func TestUtilTestSuite(t *testing.T) {
